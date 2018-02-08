@@ -14,6 +14,7 @@ class nginx_container (
 
   docker::run { $image_name:
     ensure => $ensure,
+    force  => $ensure_force,
     image  => $image_name,
     ports  => $ports,
     require => Docker::Image[$image_name],
